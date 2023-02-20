@@ -1,5 +1,7 @@
+import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
 import 'package:gdsc_uos_atttendance/const/colors.dart';
+import 'package:gdsc_uos_atttendance/view/components/event_box_decoration.dart';
 
 class HostEvent extends StatelessWidget {
   HostEvent({Key? key, required this.event, required this.date, required this.time}) : super(key: key);
@@ -11,15 +13,12 @@ class HostEvent extends StatelessWidget {
       padding: EdgeInsets.all(8),
       child: GestureDetector(
         onTap: (){
-          //Navigate
+          Beamer.of(context).beamToNamed("/group_host");
         },
         child: Container(
           width: 360,
           height: 200,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20),
-            color: baseColor
-          ),
+          decoration: eventBoxDecoration,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

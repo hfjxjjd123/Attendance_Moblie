@@ -31,6 +31,6 @@ class MyApp extends StatelessWidget {
 
 BeamerDelegate _routerDelegate = BeamerDelegate(
   locationBuilder: BeamerLocationBuilder(
-      beamLocations: [MainLocation()]),
+      beamLocations: [MainLocation(), GroupHostLocation(), GroupParticipantsLocation()]),
 );
 
