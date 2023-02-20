@@ -11,7 +11,7 @@ class ParticipatingEventPanel extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        PanelText(title: participating[KOR]),
+        PanelText(title: participating[ENG]),
         ...participateEvent
       ],
     );

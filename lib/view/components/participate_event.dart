@@ -12,14 +12,14 @@ class ParticipateEvent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(10),
+      padding: EdgeInsets.all(8),
       child: GestureDetector(
         onTap: () {
           //Navigate
         },
         child: Container(
-          width: 300,
-          height: 180,
+          width: 360,
+          height: 200,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20), color: baseColor),
           child: Column(
@@ -27,7 +27,7 @@ class ParticipateEvent extends StatelessWidget {
             children: [
               Text(
                 event,
-                style: Theme.of(context).textTheme.displayMedium,
+                style: Theme.of(context).textTheme.displayMedium!.copyWith(fontSize: 30),
               ),
               Container(
                 height: 15,

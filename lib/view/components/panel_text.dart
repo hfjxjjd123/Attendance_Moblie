@@ -10,8 +10,8 @@ class PanelText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Container(width: 55,),
-        Text(title, style: TextStyle(fontSize: 20),),
+        Container(width: 40,),
+        Text(title, style: TextStyle(fontSize: 25, fontFamily: "TagFont"),),
         Expanded(child: Container())
       ],
     );

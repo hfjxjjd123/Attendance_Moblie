@@ -8,14 +8,14 @@ class HostEvent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(10),
+      padding: EdgeInsets.all(8),
       child: GestureDetector(
         onTap: (){
           //Navigate
         },
         child: Container(
-          width: 300,
-          height: 180,
+          width: 360,
+          height: 200,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
             color: baseColor
@@ -23,7 +23,7 @@ class HostEvent extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(event, style: Theme.of(context).textTheme.displayMedium,),
+              Text(event, style: Theme.of(context).textTheme.displayMedium!.copyWith(fontSize: 30),),
               Container(height: 15,),
               Text(date, style: Theme.of(context).textTheme.displayMedium),
               Text("$time ~", style: Theme.of(context).textTheme.displayMedium),

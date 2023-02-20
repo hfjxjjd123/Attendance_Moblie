@@ -11,7 +11,7 @@ class HostingEventPanel extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        PanelText(title: hosting[KOR]),
+        PanelText(title: hosting[ENG],),
         ...hostEvents
       ],
     );

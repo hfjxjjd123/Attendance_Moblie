@@ -16,7 +16,8 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         textTheme: const TextTheme(
-          displayMedium: TextStyle(color: Color(0xfff2f2f2), fontSize: 20)
+          displayLarge: TextStyle(color: Color(0xfff2f2f2), fontSize: 35, fontFamily: "EventFont"),
+          displayMedium: TextStyle(color: Color(0xfff2f2f2), fontSize: 23, fontFamily: "EventFont")
         ),
         primarySwatch: Colors.blue,
       ),
