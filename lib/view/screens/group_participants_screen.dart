@@ -2,6 +2,7 @@ import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
 import 'package:gdsc_uos_atttendance/const/colors.dart';
 import 'package:gdsc_uos_atttendance/const/padding.dart';
+import 'package:gdsc_uos_atttendance/view/components/attendance_checkbox.dart';
 import 'package:gdsc_uos_atttendance/view/components/group_members.dart';
 import 'package:gdsc_uos_atttendance/view/components/group_title.dart';
 import 'package:gdsc_uos_atttendance/view/components/host_event.dart';
@@ -37,15 +38,28 @@ class GroupParticipantsScreen extends StatelessWidget {
                 ),
                 //다음 일정이 없을 때를 대비해서 없음 컴포넌트도 생성해야함.
                 VerticalPadding(height: BIG_SPACE),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "나의 최근 참여도",
-                      style: Theme.of(context).textTheme.titleSmall,
-                    ),
-                    Container(width: 360, height: 36, color: Colors.amberAccent,)
-                  ],
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 28.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "나의 최근 참여도",
+                        style: Theme.of(context).textTheme.titleSmall,
+                      ),
+                      Row(
+                        children: [
+                          AttendanceCheckbox(attendance: 2),
+                          AttendanceCheckbox(attendance: 2),
+                          AttendanceCheckbox(attendance: 0),
+                          AttendanceCheckbox(attendance: 1),
+                          AttendanceCheckbox(attendance: 0),
+                          AttendanceCheckbox(attendance: 2),
+                          AttendanceCheckbox(attendance: 2),
+                        ],
+                      )
+                    ],
+                  ),
                 ),
                 VerticalPadding(height: BIG_SPACE),
                 Container(
