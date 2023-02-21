@@ -1,6 +1,7 @@
 import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
 import 'package:gdsc_uos_atttendance/const/colors.dart';
+import 'package:gdsc_uos_atttendance/view/components/group_title.dart';
 import 'package:gdsc_uos_atttendance/view/components/host_event.dart';
 
 class GroupHostScreen extends StatelessWidget {
@@ -16,10 +17,7 @@ class GroupHostScreen extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
             child: Column(
               children: [
-                Text(
-                  "GDSC UOS 모바일팀",
-                  style: Theme.of(context).textTheme.titleLarge,
-                ),
+                GroupTitle(title: "GDSC UOS 모바일팀"),
                 Container(
                   height: 5,
                 ),
