@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:gdsc_uos_atttendance/const/colors.dart';
 import 'package:gdsc_uos_atttendance/const/debug.dart';
 import 'package:gdsc_uos_atttendance/const/padding.dart';
+import 'package:gdsc_uos_atttendance/view/components/group_members.dart';
 import 'package:gdsc_uos_atttendance/view/components/group_title.dart';
 import 'package:gdsc_uos_atttendance/view/components/host_event.dart';
 import 'package:gdsc_uos_atttendance/view/components/vertical_padding.dart';
@@ -22,30 +23,7 @@ class GroupHostScreen extends StatelessWidget {
               children: [
                 GroupTitle(title: "GDSC UOS 모바일팀"),
                 VerticalPadding(height: TINY_SPACE),
-                InkWell(
-                  onTap: () {
-                    logger.d("TAPPED");
-                  },
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        Icons.group,
-                        color: activeColor,
-                      ),
-                      Container(
-                        width: 10,
-                      ),
-                      Text(
-                        "13명",
-                        style: TextStyle(
-                            color: activeColor,
-                            fontSize: 20,
-                            fontWeight: FontWeight.w500),
-                      ),
-                    ],
-                  ),
-                ),
+                GroupMembers(numOfMember: 13,),
                 VerticalPadding(height: BIG_SPACE),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
