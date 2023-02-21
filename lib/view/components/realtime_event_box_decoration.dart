@@ -5,7 +5,7 @@ import '../../const/colors.dart';
 BoxDecoration realtimeEventBoxDecoration = BoxDecoration(
     boxShadow: [
       BoxShadow(
-        color: Colors.grey.withOpacity(0.5),
+        color: Colors.grey.withOpacity(0.25),
         spreadRadius: 5,
         blurRadius: 5,
         offset: Offset(0, 1),

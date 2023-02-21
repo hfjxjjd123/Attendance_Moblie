@@ -1,5 +1,6 @@
 import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
+import 'package:gdsc_uos_atttendance/const/colors.dart';
 import 'package:gdsc_uos_atttendance/router/location.dart';
 
 void main() {
@@ -17,7 +18,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         textTheme: const TextTheme(
           displayLarge: TextStyle(color: Color(0xfff2f2f2), fontSize: 35, fontFamily: "EventFont"),
-          displayMedium: TextStyle(color: Color(0xfff2f2f2), fontSize: 23, fontFamily: "EventFont")
+          displayMedium: TextStyle(color: Color(0xfff2f2f2), fontSize: 23, fontFamily: "EventFont"),
+
+          titleLarge: TextStyle(color: Color(0xff202126), fontSize: 40, fontFamily: "EventFont"),
+          titleMedium: TextStyle(color: Color(0xff202126), fontSize: 25, fontWeight: FontWeight.w500),
         ),
       ),
       routeInformationParser: BeamerParser(),
