@@ -1,8 +1,11 @@
 import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
 import 'package:gdsc_uos_atttendance/const/colors.dart';
+import 'package:gdsc_uos_atttendance/const/debug.dart';
+import 'package:gdsc_uos_atttendance/const/padding.dart';
 import 'package:gdsc_uos_atttendance/view/components/group_title.dart';
 import 'package:gdsc_uos_atttendance/view/components/host_event.dart';
+import 'package:gdsc_uos_atttendance/view/components/vertical_padding.dart';
 
 class GroupHostScreen extends StatelessWidget {
   const GroupHostScreen({Key? key}) : super(key: key);
@@ -18,12 +21,10 @@ class GroupHostScreen extends StatelessWidget {
             child: Column(
               children: [
                 GroupTitle(title: "GDSC UOS 모바일팀"),
-                Container(
-                  height: 5,
-                ),
+                VerticalPadding(height: TINY_SPACE),
                 InkWell(
                   onTap: () {
-                    print("d");
+                    logger.d("TAPPED");
                   },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -45,9 +46,7 @@ class GroupHostScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                Container(
-                  height: 35,
-                ),
+                VerticalPadding(height: BIG_SPACE),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -59,9 +58,7 @@ class GroupHostScreen extends StatelessWidget {
                         event: "모바일 스크럼", date: "2023.02.17", time: "09:00"),
                   ],
                 ),
-                Container(
-                  height: 35,
-                ),
+                VerticalPadding(height: BIG_SPACE),
                 Container(
                   color: brightColor,
                   width: 360,
@@ -80,7 +77,7 @@ class GroupHostScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Icon(Icons.campaign, size: 35, color: baseColor,),
-                    Container(width: 3,),
+                    Container(width: TINY_SPACE,),
                     SizedBox(
                       width: 300,
                         child: TextFormField(
@@ -102,7 +99,7 @@ class GroupHostScreen extends StatelessWidget {
                     )
                   ],
                 ),
-                Container(height: 40,)
+                Container(height: 48,)
               ],
             ),
           ),
