@@ -87,6 +87,15 @@ class GroupHostScreen extends StatelessWidget {
                       width: 300,
                         child: TextFormField(
                           style: Theme.of(context).textTheme.titleMedium!.copyWith(fontSize: 20),
+                          cursorColor: baseColor,
+                          decoration: InputDecoration(
+                              focusedBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(color: baseColor)
+                              ),
+                              enabledBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(color: baseColor)
+                              )
+                          ),
                         )
                     ),
                     IconButton(
