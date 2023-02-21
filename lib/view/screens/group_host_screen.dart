@@ -1,7 +1,6 @@
 import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
 import 'package:gdsc_uos_atttendance/const/colors.dart';
-import 'package:gdsc_uos_atttendance/const/debug.dart';
 import 'package:gdsc_uos_atttendance/const/padding.dart';
 import 'package:gdsc_uos_atttendance/view/components/group_members.dart';
 import 'package:gdsc_uos_atttendance/view/components/group_title.dart';
@@ -36,6 +35,7 @@ class GroupHostScreen extends StatelessWidget {
                         event: "모바일 스크럼", date: "2023.02.17", time: "09:00"),
                   ],
                 ),
+                //다음 일정이 없을 때를 대비해서 없음 컴포넌트도 생성해야함.
                 VerticalPadding(height: BIG_SPACE),
                 Container(
                   color: brightColor,
@@ -77,7 +77,7 @@ class GroupHostScreen extends StatelessWidget {
                     )
                   ],
                 ),
-                Container(height: 48,)
+                VerticalPadding(height: 48,)
               ],
             ),
           ),

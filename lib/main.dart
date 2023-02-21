@@ -22,6 +22,7 @@ class MyApp extends StatelessWidget {
 
           titleLarge: TextStyle(color: Color(0xff202126), fontSize: 40, fontFamily: "EventFont"),
           titleMedium: TextStyle(color: Color(0xff202126), fontSize: 25, fontWeight: FontWeight.w500),
+          titleSmall: TextStyle(color: Color(0xff202126), fontSize: 18, fontWeight: FontWeight.w500),
         ),
       ),
       routeInformationParser: BeamerParser(),
