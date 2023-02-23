@@ -47,6 +47,7 @@ class GroupParticipantsScreen extends StatelessWidget {
                         "나의 최근 참여도",
                         style: Theme.of(context).textTheme.titleSmall,
                       ),
+                      VerticalPadding(height: TINY_SPACE),
                       Row(
                         children: [
                           AttendanceCheckbox(attendance: 2),
@@ -86,6 +87,7 @@ class GroupParticipantsScreen extends StatelessWidget {
                         child: TextFormField(
                           style: Theme.of(context).textTheme.titleMedium!.copyWith(fontSize: 20),
                           cursorColor: baseColor,
+                          readOnly: true,
                           decoration: InputDecoration(
                               focusedBorder: UnderlineInputBorder(
                                   borderSide: BorderSide(color: baseColor)
@@ -96,10 +98,6 @@ class GroupParticipantsScreen extends StatelessWidget {
                           ),
                         )
                     ),
-                    IconButton(
-                        onPressed: (){},
-                        icon: Icon(Icons.send, color: baseColor,)
-                    )
                   ],
                 ),
                 VerticalPadding(height: 48,)

@@ -12,12 +12,21 @@ class AttendanceCheckbox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 36, height: 36,
+      width: 36,
+      height: 36,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(3),
-          color: (attendance>ABSENT)?highlightColor:baseColor,
+        borderRadius: BorderRadius.circular(4),
+        color: (attendance > ABSENT) ? highlightColor : baseColor,
       ),
-      child: (attendance>ABSENT)?Icon(Icons.check, color: whitesColor,): Icon(Icons.close, color: whitesColor,),
+      child: (attendance > ABSENT)
+          ? Icon(
+              Icons.check,
+              color: whitesColor,
+            )
+          : Icon(
+              Icons.close,
+              color: whitesColor,
+            ),
     );
   }
 }
