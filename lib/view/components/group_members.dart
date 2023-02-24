@@ -3,6 +3,8 @@ import 'package:gdsc_uos_atttendance/const/colors.dart';
 import 'package:gdsc_uos_atttendance/const/debug.dart';
 import 'package:gdsc_uos_atttendance/const/raw_strings.dart';
 
+import '../../const/size.dart';
+
 class GroupMembers extends StatelessWidget {
   GroupMembers({Key? key, required this.numOfMember}) : super(key: key);
   int numOfMember;
@@ -19,15 +21,16 @@ class GroupMembers extends StatelessWidget {
           Icon(
             Icons.group,
             color: activeColor,
+            size: SIZE.width*0.05,
           ),
           Container(
-            width: 10,
+            width: SIZE.width*0.02,
           ),
           Text(
             "$numOfMember${peopleUnit[KOR]}",
             style: TextStyle(
                 color: activeColor,
-                fontSize: 20,
+                fontSize: SIZE.width*0.05,
                 fontWeight: FontWeight.w500),
           ),
         ],

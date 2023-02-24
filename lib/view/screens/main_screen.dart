@@ -1,3 +1,4 @@
+import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
 import 'package:gdsc_uos_atttendance/const/colors.dart';
 import 'package:gdsc_uos_atttendance/view/components/host_event.dart';
@@ -5,6 +6,7 @@ import 'package:gdsc_uos_atttendance/view/components/participate_event.dart';
 import 'package:gdsc_uos_atttendance/view/panels/hosting_event_panel.dart';
 import 'package:gdsc_uos_atttendance/view/panels/realtime_event_panel.dart';
 
+import '../../const/size.dart';
 import '../components/appbar_icon_button.dart';
 import '../components/realtime_participate_event.dart';
 import '../panels/participating_event_panel.dart';
@@ -14,27 +16,35 @@ class MainScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //!! 왜 mainScreen에선 사이즈가 안먹히지?
     return Scaffold(
       appBar: AppBar(
+        toolbarHeight: SIZE.height*0.07,
         backgroundColor: whitesColor,
         //!! size 상수이용하기
         leading: Padding(
-          padding: const EdgeInsets.only(left: 10.0),
+          padding: EdgeInsets.only(left: SIZE.width*0.02),
           child: AppbarIconButton(
-            icon: const Icon(
+            onPressed: (){
+
+            },
+            icon: Icon(
               Icons.manage_accounts,
-              size: 40,
+              size: SIZE.width*0.09,
             ),
           ),
         ),
         //!! size 상수이용하기
         actions: [
           Padding(
-            padding: const EdgeInsets.only(right: 10.0),
+            padding: EdgeInsets.only(right: SIZE.width*0.02),
             child: AppbarIconButton(
-              icon: const Icon(
+              onPressed: (){
+                Beamer.of(context).beamToNamed("/notification");
+              },
+              icon: Icon(
                 Icons.notifications,
-                size: 40,
+                size: SIZE.width*0.09,
               ),
             ),
           )
@@ -52,7 +62,7 @@ class MainScreen extends StatelessWidget {
                 ],
               ),
               Container(
-                height: 30,
+                height: SIZE.height*0.03,
               ),
               HostingEventPanel(
                 hostEvents: [
@@ -61,7 +71,7 @@ class MainScreen extends StatelessWidget {
                 ],
               ),
               Container(
-                height: 30,
+                height: SIZE.height*0.03,
               ),
               ParticipatingEventPanel(
                 participateEvent: [

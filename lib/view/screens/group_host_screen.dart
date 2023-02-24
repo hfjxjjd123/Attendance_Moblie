@@ -7,6 +7,8 @@ import 'package:gdsc_uos_atttendance/view/components/group_title.dart';
 import 'package:gdsc_uos_atttendance/view/components/host_event.dart';
 import 'package:gdsc_uos_atttendance/view/components/vertical_padding.dart';
 
+import '../../const/size.dart';
+
 class GroupHostScreen extends StatelessWidget {
   const GroupHostScreen({Key? key}) : super(key: key);
 
@@ -17,19 +19,24 @@ class GroupHostScreen extends StatelessWidget {
         child: Container(
           color: whitesColor,
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            padding: EdgeInsets.symmetric(horizontal: SIZE.width * 0.08),
             child: Column(
               children: [
                 GroupTitle(title: "GDSC UOS 모바일팀"),
                 VerticalPadding(height: TINY_SPACE),
-                GroupMembers(numOfMember: 13,),
+                GroupMembers(
+                  numOfMember: 13,
+                ),
                 VerticalPadding(height: BIG_SPACE),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       "Next",
-                      style: Theme.of(context).textTheme.titleMedium,
+                      style: Theme.of(context)
+                          .textTheme
+                          .titleMedium!
+                          .copyWith(fontSize: SIZE.width * 0.055),
                     ),
                     HostEvent(
                         event: "모바일 스크럼", date: "2023.02.17", time: "09:00"),
@@ -39,8 +46,8 @@ class GroupHostScreen extends StatelessWidget {
                 VerticalPadding(height: BIG_SPACE),
                 Container(
                   color: brightColor,
-                  width: 360,
-                  height: 150,
+                  width: SIZE.width*0.8,
+                  height: SIZE.height*0.15,
                   child: Center(
                       child: Text(
                     "(그룹일정페이지로 이동)",
@@ -54,30 +61,40 @@ class GroupHostScreen extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(Icons.campaign, size: 35, color: baseColor,),
-                    Container(width: TINY_SPACE,),
+                    Icon(
+                      Icons.campaign,
+                      size: SIZE.width*0.08,
+                      color: baseColor,
+                    ),
+                    Container(
+                      width: TINY_SPACE,
+                    ),
                     SizedBox(
-                      width: 300,
+                        width: SIZE.width*0.6,
                         child: TextFormField(
-                          style: Theme.of(context).textTheme.titleMedium!.copyWith(fontSize: 20),
+                          style: Theme.of(context)
+                              .textTheme
+                              .titleMedium!
+                              .copyWith(fontSize: SIZE.width*0.04),
                           cursorColor: baseColor,
                           decoration: InputDecoration(
                               focusedBorder: UnderlineInputBorder(
-                                  borderSide: BorderSide(color: baseColor)
-                              ),
+                                  borderSide: BorderSide(color: baseColor)),
                               enabledBorder: UnderlineInputBorder(
-                                  borderSide: BorderSide(color: baseColor)
-                              )
-                          ),
-                        )
-                    ),
+                                  borderSide: BorderSide(color: baseColor))),
+                        )),
                     IconButton(
-                        onPressed: (){},
-                        icon: Icon(Icons.send, color: baseColor,)
-                    )
+                        onPressed: () {},
+                        icon: Icon(
+                          Icons.send,
+                          color: baseColor,
+                          size: SIZE.width*0.05,
+                        ))
                   ],
                 ),
-                VerticalPadding(height: 48,)
+                VerticalPadding(
+                  height: SIZE.height*0.06,
+                )
               ],
             ),
           ),
@@ -95,7 +112,7 @@ class GroupHostScreen extends StatelessWidget {
         ),
         backgroundColor: whitesColor,
         elevation: 0,
-        toolbarHeight: 50,
+        toolbarHeight: SIZE.height*0.06,
       ),
     );
   }

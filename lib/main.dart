@@ -1,7 +1,8 @@
 import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
-import 'package:gdsc_uos_atttendance/const/colors.dart';
 import 'package:gdsc_uos_atttendance/router/location.dart';
+
+import 'const/size.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,6 +14,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+
     return MaterialApp.router(
       title: 'Attendance',
       theme: ThemeData(
@@ -36,6 +38,6 @@ class MyApp extends StatelessWidget {
 
 BeamerDelegate _routerDelegate = BeamerDelegate(
   locationBuilder: BeamerLocationBuilder(
-      beamLocations: [MainLocation(), GroupHostLocation(), GroupParticipantsLocation()]),
+      beamLocations: [MainLocation(), GroupHostLocation(), GroupParticipantsLocation(), NotificationLocation()]),
 );
 
