@@ -9,6 +9,8 @@ import 'package:gdsc_uos_atttendance/view/components/group_title.dart';
 import 'package:gdsc_uos_atttendance/view/components/host_event.dart';
 import 'package:gdsc_uos_atttendance/view/components/vertical_padding.dart';
 
+import '../components/participate_event.dart';
+
 class GroupParticipantsScreen extends StatelessWidget {
   const GroupParticipantsScreen({Key? key}) : super(key: key);
 
@@ -38,7 +40,7 @@ class GroupParticipantsScreen extends StatelessWidget {
                           .titleMedium!
                           .copyWith(fontSize: SIZE.width * 0.055),
                     ),
-                    HostEvent(
+                    ParticipateEvent(
                         event: "모바일 스크럼", date: "2023.02.17", time: "09:00"),
                   ],
                 ),
