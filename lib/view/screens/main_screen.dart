@@ -16,7 +16,6 @@ class MainScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //!! 왜 mainScreen에선 사이즈가 안먹히지?
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: SIZE.height*0.07,
@@ -58,27 +57,39 @@ class MainScreen extends StatelessWidget {
             children: [
               RealtimeEventPanel(
                 realtimeEvents: [
-                  RealtimeParticipateEvent(event: "모바일 스크럼")
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: SIZE.height*0.01),
+                    child: RealtimeParticipateEvent(event: "모바일 스크럼"),
+                  )
                 ],
               ),
               Container(
-                height: SIZE.height*0.03,
+                height: SIZE.height*0.02,
               ),
               HostingEventPanel(
                 hostEvents: [
-                  HostEvent(
-                      event: "9시 중도 스터디", date: "2023.02.20", time: "08:55")
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: SIZE.height*0.01),
+                    child: HostEvent(
+                        event: "9시 중도 스터디", date: "2023.02.20", time: "08:55"),
+                  )
                 ],
               ),
               Container(
-                height: SIZE.height*0.03,
+                height: SIZE.height*0.02,
               ),
               ParticipatingEventPanel(
                 participateEvent: [
-                  ParticipateEvent(
-                      event: "블로그 리뷰", date: "2023.02.21", time: "16:00"),
-                  ParticipateEvent(
-                      event: "스프린트 리뷰", date: "2023.02.26", time: "12:00"),
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: SIZE.height*0.01),
+                    child: ParticipateEvent(
+                        event: "블로그 리뷰", date: "2023.02.21", time: "16:00"),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: SIZE.height*0.01),
+                    child: ParticipateEvent(
+                        event: "스프린트 리뷰", date: "2023.02.26", time: "12:00"),
+                  ),
                 ],
               )
             ],
