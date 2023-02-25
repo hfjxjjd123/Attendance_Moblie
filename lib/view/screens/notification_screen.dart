@@ -2,24 +2,35 @@ import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:gdsc_uos_atttendance/const/size.dart';
-import 'package:gdsc_uos_atttendance/view/components/message/dropout_message.dart';
-import 'package:gdsc_uos_atttendance/view/components/message/join_message.dart';
-import 'package:gdsc_uos_atttendance/view/components/notification_box.dart';
+import 'package:gdsc_uos_atttendance/view/components/message_box.dart';
 
 import '../../const/colors.dart';
-import '../components/message/leave_message.dart';
+import '../../const/message_option.dart';
+import '../../domain/message.dart';
 
 class NotificationScreen extends StatelessWidget {
   NotificationScreen({Key? key}) : super(key: key);
-  final List<Widget> messages = [
-    DropoutMessage(groupName: "GDSC 모바일팀"),
-    JoinMessage(
-      groupName: "GDSC 모바일팀",
-      userName: "이학림",
+  final List<Message> messages = [
+    Message(
+        groupName: "스터디",
+        hostName: "이학림",
+        mateName: "강주혁",
+        option: DROPOUT_RESPONSE,
+      time:"08:14"
     ),
-    LeaveMessage(
-      groupName: "GDSC 모바일팀",
-      userName: "이학림",
+    Message(
+        groupName: "GDSC UOS 모바일팀",
+        hostName: "이학림",
+        mateName: "송은수",
+        option: INVITATE_RECUR,
+        time:"09:12"
+    ),
+    Message(
+        groupName: "GDSC UOS 모바일팀",
+        hostName: "이학림",
+        mateName: "권혁주",
+        option: INVITATE,
+        time:"09:14"
     ),
   ];
 
@@ -32,8 +43,13 @@ class NotificationScreen extends StatelessWidget {
           child: ListView.builder(
             itemCount: messages.length,
             itemBuilder: (BuildContext context, int index) {
-              return NotificationBox(
-                contents: messages[index],
+              return MessageBox(
+                groupName: messages[index].groupName,
+                hostName: messages[index].hostName,
+                mateName: messages[index].mateName,
+                notify: messages[index].notify,
+                option: messages[index].option,
+                time: messages[index].time
               );
             },
           ),

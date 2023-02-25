@@ -1,0 +1,12 @@
+const int INVITATE = 0;
+const int INVITATE_RECUR = 1;
+const int INVITATE_RESPONSE = 2;
+const int NOTIFY = 3;
+const int DROPOUT_RECUR = 4;
+const int DROPOUT_RESPONSE = 4;
+const int LEAVE_RESPONSE = 5;
+const int LEAVE_RECUR = 6;
+const int DELEGATE_RESPONSE = 7;
+const int DELEGATE_RECUR = 8;
+const int UNDELEGAGTE_RECUR = 9;
+const int UNDELEGAGTE_RESPONSE = 10;
