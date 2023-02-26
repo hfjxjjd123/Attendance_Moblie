@@ -1,15 +1,15 @@
-class Mate{
+class Host{
   int id= 0;
   int userId=0;
   int groupId=0;
 
-  Mate({
+  Host({
     required this.id,
     required this.userId,
     required this.groupId
   });
 
-  Mate.fromJson(dynamic json) {
+  Host.fromJson(dynamic json) {
     id = json['id'];
     userId = json['userId'];
     groupId = json['groupId'];
@@ -19,7 +19,7 @@ class Mate{
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
     map['id'] = id;
-    map['userId'] = userId;
+    map['usreId'] = userId;
     map['groupId'] = groupId;
     return map;
   }
