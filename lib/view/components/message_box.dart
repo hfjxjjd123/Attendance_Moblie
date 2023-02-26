@@ -1,3 +1,4 @@
+import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
 import 'package:gdsc_uos_atttendance/const/colors.dart';
 import 'package:gdsc_uos_atttendance/const/message_option.dart';
@@ -7,6 +8,8 @@ import '../../const/debug.dart';
 import '../../const/size.dart';
 
 class MessageBox extends StatelessWidget {
+  //!! Group의 엔티티를 전달해줘야 이후 연결까지 자연스럽게 가능
+  //!! 오늘어제 Controller를 이용하자
   MessageBox(
       {Key? key,
       required this.groupName,
@@ -106,6 +109,7 @@ class MessageBox extends StatelessWidget {
         ),
       );
     } else {
+      //수락 클릭시 splash color 수정
       //Team이름을 클릭하면 Team화면으로 갈 수 있도록 설정하기
       return Padding(
         padding: EdgeInsets.only(top: SIZE.height * 0.02),
@@ -122,46 +126,58 @@ class MessageBox extends StatelessWidget {
                 padding: EdgeInsets.all(SIZE.width * 0.05),
                 child: Column(
                   children: [
-                    Text(
-                      groupName,
-                      style:
-                          TextStyle(fontSize: SIZE.width * 0.05, height: 1.5),
-                      textAlign: TextAlign.center,
-                      overflow: TextOverflow.ellipsis,
-                      maxLines: 1,
+                    InkWell(
+                      onTap: (){
+                        Beamer.of(context).beamToNamed("/group_participants");
+                      },
+                      child: Text(
+                        groupName,
+                        style:
+                            TextStyle(fontSize: SIZE.width * 0.05, height: 1.5),
+                        textAlign: TextAlign.center,
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 1,
+                      ),
                     ),
                     VerticalPadding(height: SIZE.height * 0.01),
                     Text(
                       message,
                       style:
-                          TextStyle(fontSize: SIZE.width * 0.05, height: 1.5),
+                          TextStyle(fontSize: SIZE.width * 0.045, height: 1.5),
                       textAlign: TextAlign.center,
                     ),
-                    VerticalPadding(height: SIZE.height * 0.03),
+                    VerticalPadding(height: SIZE.height * 0.025),
                     Row(
                       children: [
                         Container(
-                          width: SIZE.width * 0.05,
+                          width: SIZE.width * 0.03,
                         ),
                         InkWell(
-                          child: Text(
-                            "거절",
-                            style: TextStyle(fontSize: SIZE.width * 0.04, color: Color(0xffA81F1F)),
+                          highlightColor: Colors.black,
+                          child: Padding(
+                            padding: EdgeInsets.all(SIZE.width*0.02),
+                            child: Text(
+                              "거절",
+                              style: TextStyle(fontSize: SIZE.width * 0.04, color: Color(0xffA81F1F)),
+                            ),
                           ),
                           onTap: () {
-                            logger.d("clicked");
                           },
                         ),
                         Expanded(child: Container()),
                         InkWell(
-                          child: Text("수락",
-                              style: TextStyle(fontSize: SIZE.width * 0.04, color: Color(0xff151868))),
+                          highlightColor: Colors.black,
+                          child: Padding(
+                            padding: EdgeInsets.all(SIZE.width*0.02),
+                            child: Text("수락",
+                                style: TextStyle(fontSize: SIZE.width * 0.04, color: Color(
+                                    0xff404180))),
+                          ),
                           onTap: () {
-                            logger.d("clicked");
                           },
                         ),
                         Container(
-                          width: SIZE.width * 0.05,
+                          width: SIZE.width * 0.03,
                         ),
                       ],
                     )

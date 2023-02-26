@@ -16,21 +16,21 @@ class NotificationScreen extends StatelessWidget {
         hostName: "이학림",
         mateName: "강주혁",
         option: DROPOUT_RESPONSE,
-      time:"08:14"
+      time:"02/26 08:14"
     ),
     Message(
         groupName: "GDSC UOS 모바일팀",
         hostName: "이학림",
         mateName: "송은수",
         option: INVITATE_RECUR,
-        time:"09:12"
+        time:"어제 09:12"
     ),
     Message(
         groupName: "GDSC UOS 모바일팀",
         hostName: "이학림",
         mateName: "권혁주",
         option: INVITATE,
-        time:"09:14"
+        time:"오늘 09:14"
     ),
   ];
 

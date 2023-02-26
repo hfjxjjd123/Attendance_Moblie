@@ -41,7 +41,7 @@ class MainScreen extends StatelessWidget {
               onPressed: (){
                 Beamer.of(context).beamToNamed("/notification");
               },
-              icon: Icon(
+              icon: Icon(//!! 변경상태 받아서 빨강 똥글배기 띄우기
                 Icons.notifications,
                 size: SIZE.width*0.09,
               ),
