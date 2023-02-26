@@ -7,6 +7,7 @@ import 'package:gdsc_uos_atttendance/view/panels/hosting_event_panel.dart';
 import 'package:gdsc_uos_atttendance/view/panels/realtime_event_panel.dart';
 
 import '../../const/size.dart';
+import '../../domain/event.dart';
 import '../components/appbar_icon_button.dart';
 import '../components/realtime_participate_event.dart';
 import '../panels/participating_event_panel.dart';
@@ -59,7 +60,12 @@ class MainScreen extends StatelessWidget {
                 realtimeEvents: [
                   Padding(
                     padding: EdgeInsets.symmetric(vertical: SIZE.height*0.01),
-                    child: RealtimeParticipateEvent(event: "모바일 스크럼"),
+                    child: RealtimeParticipateEvent(event: Event(
+                        id: 0,
+                        groupId: 0,
+                        scheduleName: '데일리 스크럼',
+                        date: '2022.02.27',
+                        time: '09:00')),
                   )
                 ],
               ),
@@ -71,7 +77,12 @@ class MainScreen extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.symmetric(vertical: SIZE.height*0.01),
                     child: HostEvent(
-                        event: "9시 중도 스터디", date: "2023.02.20", time: "08:55"),
+                        event: Event(
+                            id: 0,
+                            groupId: 0,
+                            scheduleName: '데일리 스크럼',
+                            date: '2022.02.27',
+                            time: '09:00')),
                   )
                 ],
               ),
@@ -83,12 +94,22 @@ class MainScreen extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.symmetric(vertical: SIZE.height*0.01),
                     child: ParticipateEvent(
-                        event: "블로그 리뷰", date: "2023.02.21", time: "16:00"),
+                        event: Event(
+                            id: 0,
+                            groupId: 0,
+                            scheduleName: '데일리 스크럼',
+                            date: '2022.02.27',
+                            time: '09:00')),
                   ),
                   Padding(
                     padding: EdgeInsets.symmetric(vertical: SIZE.height*0.01),
                     child: ParticipateEvent(
-                        event: "스프린트 리뷰", date: "2023.02.26", time: "12:00"),
+                        event: Event(
+                            id: 0,
+                            groupId: 0,
+                            scheduleName: '데일리 스크럼',
+                            date: '2022.02.27',
+                            time: '09:00')),
                   ),
                 ],
               )

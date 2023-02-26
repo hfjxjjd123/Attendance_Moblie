@@ -8,9 +8,14 @@ import 'package:gdsc_uos_atttendance/view/components/host_event.dart';
 import 'package:gdsc_uos_atttendance/view/components/vertical_padding.dart';
 
 import '../../const/size.dart';
+import '../../domain/event.dart';
+import '../../domain/group.dart';
+import '../../domain/host.dart';
 
 class GroupHostScreen extends StatelessWidget {
-  const GroupHostScreen({Key? key}) : super(key: key);
+  GroupHostScreen({Key? key, required this.group, required this.host}) : super(key: key);
+  Group group;
+  Host host;
 
   @override
   Widget build(BuildContext context) {
@@ -22,10 +27,10 @@ class GroupHostScreen extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: SIZE.width * 0.08),
             child: Column(
               children: [
-                GroupTitle(title: "GDSC UOS 모바일팀"),
+                GroupTitle(title: group.name),
                 VerticalPadding(height: TINY_SPACE),
                 GroupMembers(
-                  numOfMember: 13,
+                  numOfMember: group.mates.length + group.hosts.length,
                 ),
                 VerticalPadding(height: BIG_SPACE),
                 Column(
@@ -39,7 +44,7 @@ class GroupHostScreen extends StatelessWidget {
                           .copyWith(fontSize: SIZE.width * 0.055),
                     ),
                     HostEvent(
-                        event: "모바일 스크럼", date: "2023.02.17", time: "09:00"),
+                        event: group.nextEvent),
                   ],
                 ),
                 //다음 일정이 없을 때를 대비해서 없음 컴포넌트도 생성해야함.

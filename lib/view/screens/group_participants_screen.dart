@@ -3,16 +3,21 @@ import 'package:flutter/material.dart';
 import 'package:gdsc_uos_atttendance/const/colors.dart';
 import 'package:gdsc_uos_atttendance/const/padding.dart';
 import 'package:gdsc_uos_atttendance/const/size.dart';
+import 'package:gdsc_uos_atttendance/domain/event.dart';
 import 'package:gdsc_uos_atttendance/view/components/attendance_checkbox.dart';
 import 'package:gdsc_uos_atttendance/view/components/group_members.dart';
 import 'package:gdsc_uos_atttendance/view/components/group_title.dart';
 import 'package:gdsc_uos_atttendance/view/components/host_event.dart';
 import 'package:gdsc_uos_atttendance/view/components/vertical_padding.dart';
 
+import '../../domain/group.dart';
+import '../../domain/mate.dart';
 import '../components/participate_event.dart';
 
 class GroupParticipantsScreen extends StatelessWidget {
-  const GroupParticipantsScreen({Key? key}) : super(key: key);
+  GroupParticipantsScreen({Key? key, required this.group, required this.mate}) : super(key: key);
+  Group group;
+  Mate mate;
 
   @override
   Widget build(BuildContext context) {
@@ -24,10 +29,10 @@ class GroupParticipantsScreen extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: SIZE.width * 0.08),
             child: Column(
               children: [
-                GroupTitle(title: "GDSC UOS 모바일팀"),
+                GroupTitle(title: group.name),
                 VerticalPadding(height: TINY_SPACE),
                 GroupMembers(
-                  numOfMember: 13,
+                  numOfMember: group.hosts.length+group.mates.length,
                 ),
                 VerticalPadding(height: BIG_SPACE),
                 Column(
@@ -41,7 +46,7 @@ class GroupParticipantsScreen extends StatelessWidget {
                           .copyWith(fontSize: SIZE.width * 0.055),
                     ),
                     ParticipateEvent(
-                        event: "모바일 스크럼", date: "2023.02.17", time: "09:00"),
+                        event: group.nextEvent),
                   ],
                 ),
                 //다음 일정이 없을 때를 대비해서 없음 컴포넌트도 생성해야함.
@@ -93,7 +98,7 @@ class GroupParticipantsScreen extends StatelessWidget {
                   children: [
                     Icon(
                       Icons.campaign,
-                      size: SIZE.width*0.08,
+                      size: SIZE.width * 0.08,
                       color: baseColor,
                     ),
                     Container(

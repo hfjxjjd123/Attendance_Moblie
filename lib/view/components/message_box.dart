@@ -207,12 +207,12 @@ class MessageBox extends StatelessWidget {
         break;
       case INVITATE_RESPONSE:
         {
-          message = "$groupName에 \n회원님이 합류됐습니다.";
+          message = "$groupName에 \n회원님이 들어갔습니다.";
         }
         break;
       case INVITATE_RECUR:
         {
-          message = "$groupName에 \n$mateName님이 합류했습니다.";
+          message = "$groupName에 \n$mateName님이 들어왔습니다.";
         }
         break;
       case NOTIFY:
