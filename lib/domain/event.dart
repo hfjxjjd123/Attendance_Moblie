@@ -1,25 +1,28 @@
 class Event{
   int id= 0;
   int groupId=0;
-  String scheduleName="";
+  String name="";
+  int rule = -1;
   //!! Datetime 형식으로 수정
-  String date="";
-  String time="";
+  String ntime="";
+  String code="";
 
   Event({
     required this.id,
     required this.groupId,
-    required this.scheduleName,
-    required this.date,
-    required this.time
+    required this.name,
+    required this.ntime,
+    required this.code,
+    required this.rule
   });
 
   Event.fromJson(dynamic json) {
     id = json['id'];
     groupId = json['groupId'];
-    scheduleName = json['scheduleName'];
-    date = json['date'];
-    time = json['time'];
+    name = json['name'];
+    ntime = json['ntime'];
+    code = json['code'];
+    rule = json['rule'];
   }
 
 
@@ -27,9 +30,10 @@ class Event{
     final map = <String, dynamic>{};
     map['id'] = id;
     map['groupId'] = groupId;
-    map['scheduleName'] = scheduleName;
-    map['date'] = date;
-    map['time'] = time;
+    map['name'] = name;
+    map['ntime'] = ntime;
+    map['code'] = code;
+    map['rule'] = rule;
     return map;
   }
 

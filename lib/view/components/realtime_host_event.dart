@@ -7,13 +7,14 @@ import '../../const/size.dart';
 import '../../domain/event.dart';
 
 class RealtimeHostEvent extends StatelessWidget {
-  RealtimeHostEvent({Key? key, required this.event, required this.code})
+  RealtimeHostEvent({Key? key, required this.event})
       : super(key: key);
   Event event;
-  String code;
 
   @override
   Widget build(BuildContext context) {
+    String code = event.code;
+
     return Container(
       width: SIZE.width * 0.8,
       height: SIZE.width * 0.8,
@@ -22,7 +23,7 @@ class RealtimeHostEvent extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            event.scheduleName,
+            event.name,
             style: Theme.of(context).textTheme.displayLarge,
           ),
           Container(

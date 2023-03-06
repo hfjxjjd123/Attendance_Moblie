@@ -2,14 +2,14 @@ import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
 import 'package:gdsc_uos_atttendance/const/colors.dart';
 import 'package:gdsc_uos_atttendance/view/components/host_event.dart';
-import 'package:gdsc_uos_atttendance/view/components/participate_event.dart';
+import 'package:gdsc_uos_atttendance/view/components/partis_event.dart';
 import 'package:gdsc_uos_atttendance/view/panels/hosting_event_panel.dart';
 import 'package:gdsc_uos_atttendance/view/panels/realtime_event_panel.dart';
 
 import '../../const/size.dart';
 import '../../domain/event.dart';
 import '../components/appbar_icon_button.dart';
-import '../components/realtime_participate_event.dart';
+import '../components/realtime_partis_event.dart';
 import '../panels/participating_event_panel.dart';
 
 class MainScreen extends StatelessWidget {
@@ -60,12 +60,13 @@ class MainScreen extends StatelessWidget {
                 realtimeEvents: [
                   Padding(
                     padding: EdgeInsets.symmetric(vertical: SIZE.height*0.01),
-                    child: RealtimeParticipateEvent(event: Event(
+                    child: RealtimePartisEvent(event: Event(
                         id: 0,
                         groupId: 0,
-                        scheduleName: '데일리 스크럼',
-                        date: '2022.02.27',
-                        time: '09:00')),
+                        name: '데일리 스크럼',
+                        ntime: '2023-03-06 23:00:00',
+                        code: 'DINK',
+                        rule: 0),),
                   )
                 ],
               ),
@@ -80,9 +81,10 @@ class MainScreen extends StatelessWidget {
                         event: Event(
                             id: 0,
                             groupId: 0,
-                            scheduleName: '데일리 스크럼',
-                            date: '2022.02.27',
-                            time: '09:00')),
+                            name: '데일리 스크럼',
+                            ntime: '2023-03-06 23:00:00',
+                            code: 'DINK',
+                            rule: 0),),
                   )
                 ],
               ),
@@ -93,23 +95,25 @@ class MainScreen extends StatelessWidget {
                 participateEvent: [
                   Padding(
                     padding: EdgeInsets.symmetric(vertical: SIZE.height*0.01),
-                    child: ParticipateEvent(
+                    child: PartisEvent(
                         event: Event(
                             id: 0,
                             groupId: 0,
-                            scheduleName: '데일리 스크럼',
-                            date: '2022.02.27',
-                            time: '09:00')),
+                            name: '중도 스터디',
+                            ntime: '2023-03-06 10:00:00',
+                            code: 'DINK',
+                            rule: 0),),
                   ),
                   Padding(
                     padding: EdgeInsets.symmetric(vertical: SIZE.height*0.01),
-                    child: ParticipateEvent(
+                    child: PartisEvent(
                         event: Event(
                             id: 0,
                             groupId: 0,
-                            scheduleName: '데일리 스크럼',
-                            date: '2022.02.27',
-                            time: '09:00')),
+                            name: '데일리 스크럼',
+                            ntime: '2023-03-01 23:00:00',
+                            code: 'DINK',
+                            rule: 0),),
                   ),
                 ],
               )

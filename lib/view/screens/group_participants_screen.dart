@@ -12,7 +12,7 @@ import 'package:gdsc_uos_atttendance/view/components/vertical_padding.dart';
 
 import '../../domain/group.dart';
 import '../../domain/mate.dart';
-import '../components/participate_event.dart';
+import '../components/partis_event.dart';
 
 class GroupParticipantsScreen extends StatelessWidget {
   GroupParticipantsScreen({Key? key, required this.group, required this.mate}) : super(key: key);
@@ -45,7 +45,7 @@ class GroupParticipantsScreen extends StatelessWidget {
                           .titleMedium!
                           .copyWith(fontSize: SIZE.width * 0.055),
                     ),
-                    ParticipateEvent(
+                    PartisEvent(
                         event: group.nextEvent),
                   ],
                 ),

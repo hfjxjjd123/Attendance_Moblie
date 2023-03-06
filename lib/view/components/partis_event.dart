@@ -6,8 +6,8 @@ import 'package:gdsc_uos_atttendance/view/components/event_box_decoration.dart';
 import '../../const/size.dart';
 import '../../domain/event.dart';
 
-class ParticipateEvent extends StatelessWidget {
-  ParticipateEvent(
+class PartisEvent extends StatelessWidget {
+  PartisEvent(
       {Key? key, required this.event})
       : super(key: key);
   Event event;
@@ -26,7 +26,7 @@ class ParticipateEvent extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              event.scheduleName,
+              event.name,
               style: Theme.of(context)
                   .textTheme
                   .displayMedium!
@@ -35,12 +35,12 @@ class ParticipateEvent extends StatelessWidget {
             Container(
               height: SIZE.height * 0.015,
             ),
-            Text(event.date,
+            Text(event.ntime.substring(0,10).replaceAll("-", "."),
                 style: Theme.of(context)
                     .textTheme
                     .displayMedium!
                     .copyWith(fontSize: SIZE.width * 0.05)),
-            Text(event.time,
+            Text(event.ntime.substring(11,16),
                 style: Theme.of(context)
                     .textTheme
                     .displayMedium!

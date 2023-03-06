@@ -6,8 +6,8 @@ import 'package:gdsc_uos_atttendance/view/components/realtime_event_box_decorati
 import '../../const/size.dart';
 import '../../domain/event.dart';
 
-class RealtimeParticipateEvent extends StatelessWidget {
-  RealtimeParticipateEvent({Key? key, required this.event}) : super(key: key);
+class RealtimePartisEvent extends StatelessWidget {
+  RealtimePartisEvent({Key? key, required this.event}) : super(key: key);
   Event event;
 
   @override
@@ -20,7 +20,7 @@ class RealtimeParticipateEvent extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            event.scheduleName,
+            event.name,
             style: Theme.of(context).textTheme.displayLarge,
           ),
           Container(
