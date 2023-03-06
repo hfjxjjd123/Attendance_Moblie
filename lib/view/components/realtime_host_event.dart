@@ -13,7 +13,13 @@ class RealtimeHostEvent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String code = event.code;
+    String code;
+    if(event.code!=null){
+      code = event.code!;
+    }else{
+      code = "";
+    }
+
 
     return Container(
       width: SIZE.width * 0.8,

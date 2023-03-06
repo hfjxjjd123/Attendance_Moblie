@@ -5,7 +5,7 @@ class Event{
   int rule = -1;
   //!! Datetime 형식으로 수정
   String ntime="";
-  String code="";
+  String? code;
 
   Event({
     required this.id,
