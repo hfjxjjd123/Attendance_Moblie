@@ -4,14 +4,14 @@ class Event{
   String name="";
   int rule = -1;
   //!! Datetime 형식으로 수정
-  String ntime="";
+  String nextSchedule="";
   String? code;
 
   Event({
     required this.id,
     required this.groupId,
     required this.name,
-    required this.ntime,
+    required this.nextSchedule,
     required this.code,
     required this.rule
   });
@@ -20,7 +20,7 @@ class Event{
     id = json['id'];
     groupId = json['groupId'];
     name = json['name'];
-    ntime = json['ntime'];
+    nextSchedule = json['nextSchedule'];
     code = json['code'];
     rule = json['rule'];
   }
@@ -31,7 +31,7 @@ class Event{
     map['id'] = id;
     map['groupId'] = groupId;
     map['name'] = name;
-    map['ntime'] = ntime;
+    map['nextSchedule'] = nextSchedule;
     map['code'] = code;
     map['rule'] = rule;
     return map;

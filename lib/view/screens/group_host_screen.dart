@@ -10,12 +10,10 @@ import 'package:gdsc_uos_atttendance/view/components/vertical_padding.dart';
 import '../../const/size.dart';
 import '../../domain/event.dart';
 import '../../domain/group.dart';
-import '../../domain/host.dart';
 
 class GroupHostScreen extends StatelessWidget {
-  GroupHostScreen({Key? key, required this.group, required this.host}) : super(key: key);
+  GroupHostScreen({Key? key, required this.group}) : super(key: key);
   Group group;
-  Host host;
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +28,7 @@ class GroupHostScreen extends StatelessWidget {
                 GroupTitle(title: group.name),
                 VerticalPadding(height: TINY_SPACE),
                 GroupMembers(
-                  numOfMember: group.mates.length + group.hosts.length,
+                  numOfMember: group.relatedUsersId.length,
                 ),
                 VerticalPadding(height: BIG_SPACE),
                 Column(

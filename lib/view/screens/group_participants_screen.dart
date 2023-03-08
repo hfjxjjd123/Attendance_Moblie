@@ -11,13 +11,11 @@ import 'package:gdsc_uos_atttendance/view/components/host_event.dart';
 import 'package:gdsc_uos_atttendance/view/components/vertical_padding.dart';
 
 import '../../domain/group.dart';
-import '../../domain/mate.dart';
 import '../components/partis_event.dart';
 
 class GroupParticipantsScreen extends StatelessWidget {
-  GroupParticipantsScreen({Key? key, required this.group, required this.mate}) : super(key: key);
+  GroupParticipantsScreen({Key? key, required this.group}) : super(key: key);
   Group group;
-  Mate mate;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +30,7 @@ class GroupParticipantsScreen extends StatelessWidget {
                 GroupTitle(title: group.name),
                 VerticalPadding(height: TINY_SPACE),
                 GroupMembers(
-                  numOfMember: group.hosts.length+group.mates.length,
+                  numOfMember: group.relatedUsersId.length,
                 ),
                 VerticalPadding(height: BIG_SPACE),
                 Column(

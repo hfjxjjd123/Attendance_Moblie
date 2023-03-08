@@ -1,8 +1,6 @@
 import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
 import 'package:gdsc_uos_atttendance/domain/event.dart';
-import 'package:gdsc_uos_atttendance/domain/host.dart';
-import 'package:gdsc_uos_atttendance/domain/mate.dart';
 import 'package:gdsc_uos_atttendance/view/screens/group_participants_screen.dart';
 import 'package:gdsc_uos_atttendance/view/screens/notification_screen.dart';
 import '../const/size.dart';
@@ -41,17 +39,13 @@ class GroupHostLocation extends BeamLocation {
                     id: 0,
                     groupId: 0,
                     name: '데일리 스크럼',
-                    ntime: '2023-03-01 23:00:00',
+                    nextSchedule: '2023-03-01 23:00:00',
                     code: 'DINK',
                     rule: 0),
-                hosts: [
-                  Host(id: 1, userId: 1, groupId: 0),
-                  Host(id: 1, userId: 1, groupId: 0)
-                ],
-                mates: [
-                  Mate(id: 0, userId: 2, groupId: 0)
-                ]),
-            host: Host(id: 1, userId: 1, groupId: 0),
+              relatedUsersId: [
+                123, 235, 346
+              ]
+                ),
           ),
           key: const ValueKey('group_host')),
     ];
@@ -76,23 +70,18 @@ class GroupParticipantsLocation extends BeamLocation {
             id: 0,
             groupId: 0,
             name: '데일리 스크럼',
-            ntime: '2023-03-01 23:00:00',
+            nextSchedule: '2023-03-01 23:00:00',
             code: 'DINK',
             rule: 0),
-        hosts: [
-          Host(id: 1, userId: 1, groupId: 0),
-          Host(id: 1, userId: 1, groupId: 0)
-        ],
-        mates: [
-          Mate(id: 0, userId: 2, groupId: 0)
-        ]);
-    Mate mate = Mate(id: 0, userId: 4, groupId: 0);
+      relatedUsersId: [
+        123, 235, 346
+      ]
+        );
 
     return [
       BeamPage(
           child: GroupParticipantsScreen(
-            group: group,
-            mate: mate,
+            group: group
           ),
           key: const ValueKey('group_participants')),
     ];

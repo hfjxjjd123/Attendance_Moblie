@@ -1,23 +1,18 @@
 import 'package:gdsc_uos_atttendance/domain/event.dart';
 
-import 'host.dart';
-import 'mate.dart';
-
 class Group{
-  int id= 0;
+  int id = 0;
   String name="";
   String notification="";
-  late Event nextEvent;
-  List<Host> hosts= [];
-  List<Mate> mates = [];
+  Event? nextEvent;
+  List<int> relatedUsersId = [];
 
   Group({
     required this.id,
     required this.name,
     required this.notification,
-    required this.nextEvent,
-    required this.hosts,
-    required this.mates,
+    required this.relatedUsersId,
+    this.nextEvent,
   });
 
   Group.fromJson(dynamic json) {
@@ -25,8 +20,7 @@ class Group{
     name = json['name'];
     notification = json['notification'];
     nextEvent = json['nextEvent'];
-    hosts = json['hosts'];
-    mates = json['mates'];
+    relatedUsersId = json['relatedUsersId'];
   }
 
 
@@ -36,8 +30,7 @@ class Group{
     map['name'] = name;
     map['notification'] = notification;
     map['nextEvent'] = nextEvent;
-    map['hosts'] = hosts;
-    map['mates'] = mates;
+    map['relatedUsersId'] = relatedUsersId;
     return map;
   }
 

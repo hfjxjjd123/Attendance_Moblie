@@ -6,12 +6,12 @@ import 'package:gdsc_uos_atttendance/view/components/event_box_decoration.dart';
 import '../../const/size.dart';
 import '../../domain/event.dart';
 import '../../domain/group.dart';
-import '../../domain/host.dart';
-import '../../domain/mate.dart';
 
 class HostEvent extends StatelessWidget {
   HostEvent({Key? key, required this.event}) : super(key: key);
-  Event event;
+  Event? event;
+
+  //Event가 null일때 핸들링처리 해줘야함
 
   @override
   Widget build(BuildContext context) {
@@ -26,17 +26,13 @@ class HostEvent extends StatelessWidget {
                   id: 0,
                   groupId: 0,
                   name: '데일리 스크럼',
-                  ntime: '2023-03-01 23:00:00',
+                  nextSchedule: '2023-03-01 23:00:00',
                   code: 'DINK',
                   rule: 0),
-              hosts: [
-                Host(id: 1, userId: 1, groupId: 0),
-                Host(id: 1, userId: 1, groupId: 0)
-              ],
-              mates: [
-                Mate(id: 0, userId: 2, groupId: 0)
-              ]),
-          Mate(id: 1, userId: 1, groupId: 0)
+            relatedUsersId: [
+              123, 235, 346
+            ]
+          ),
         ]);
       },
       child: Container(
@@ -47,7 +43,7 @@ class HostEvent extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              event.name,
+              event!.name,
               style: Theme.of(context)
                   .textTheme
                   .displayMedium!
@@ -56,12 +52,12 @@ class HostEvent extends StatelessWidget {
             Container(
               height: SIZE.height * 0.015,
             ),
-            Text(event.ntime.substring(0,10).replaceAll("-", "."),
+            Text(event!.nextSchedule.substring(0,10).replaceAll("-", "."),
                 style: Theme.of(context)
                     .textTheme
                     .displayMedium!
                     .copyWith(fontSize: SIZE.width * 0.05)),
-            Text(event.ntime.substring(11,16),
+            Text(event!.nextSchedule.substring(11,16),
                 style: Theme.of(context)
                     .textTheme
                     .displayMedium!
