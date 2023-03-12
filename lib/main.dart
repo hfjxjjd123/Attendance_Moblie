@@ -19,8 +19,8 @@ class MyApp extends StatelessWidget {
       title: 'Attendance',
       theme: ThemeData(
         textTheme: const TextTheme(
-          displayLarge: TextStyle(color: Color(0xfff2f2f2), fontSize: 35, fontFamily: "EventFont"),
-          displayMedium: TextStyle(color: Color(0xfff2f2f2), fontSize: 23, fontFamily: "EventFont"),
+          displayLarge: TextStyle(color: Color(0xffeaeaea), fontSize: 35, fontFamily: "EventFont"),
+          displayMedium: TextStyle(color: Color(0xffeaeaea), fontSize: 23, fontFamily: "EventFont"),
 
           titleLarge: TextStyle(color: Color(0xff202126), fontSize: 40, fontFamily: "EventFont"),
           titleMedium: TextStyle(color: Color(0xff202126), fontSize: 25, fontWeight: FontWeight.w500),
