@@ -46,6 +46,7 @@ class _ModifyUsernameDialogState extends State<ModifyUsernameDialog> {
                       style: TextStyle(
                         fontSize: SIZE.width * 0.05,
                       ),
+
                       inputFormatters: [
                         FilteringTextInputFormatter(RegExp(r"^\s$"),
                             allow: false,
