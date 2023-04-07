@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:gdsc_uos_atttendance/ybloc/user_bloc.dart';
+import 'package:gdsc_uos_atttendance/zconst/debug.dart';
 
 import '../zconst/colors.dart';
 import '../zconst/size.dart';
@@ -18,6 +20,7 @@ class _ModifyUsernameDialogState extends State<ModifyUsernameDialog> {
 
   @override
   Widget build(BuildContext context) {
+    final userBloc = UserBloc();
     _textEditingController.text = "";
     return AlertDialog(
       shape: const RoundedRectangleBorder(
@@ -91,8 +94,13 @@ class _ModifyUsernameDialogState extends State<ModifyUsernameDialog> {
                       _isUploading = true;
                       setState(() {});
 
-                      await UserRestApi()
+                      String? changed = await UserRestApi()
                           .modifyUsername(_textEditingController.text);
+
+                      if(changed!=null){
+                        userBloc.add(ModifyUsername(newUsername: changed));
+                      }
+                      Navigator.pop(context);
                     }
                   },
                   child:

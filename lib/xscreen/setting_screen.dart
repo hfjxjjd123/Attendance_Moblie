@@ -1,30 +1,38 @@
 import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:gdsc_uos_atttendance/ybloc/user_bloc.dart';
+import 'package:gdsc_uos_atttendance/zconst/debug.dart';
 import 'package:gdsc_uos_atttendance/zconst/size.dart';
 import 'package:gdsc_uos_atttendance/xcomponent/setting_collect_panel.dart';
 import '../../zconst/colors.dart';
 import '../xcomponent/adv_panel.dart';
 import '../xcomponent/group_collect_panel.dart';
+import '../ybloc/setting_page_bloc.dart';
 
 class SettingScreen extends StatelessWidget {
   SettingScreen({Key? key}) : super(key: key);
-
+  final userBloc = UserBloc();
   //TODO static => dynamic DESIGN
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: SIZE.width * 0.075),
-            child: ListView(
+          child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: SIZE.width * 0.075),
+        child: BlocBuilder<UserBloc, UserState>(
+            bloc: userBloc,
+          builder: (BuildContext context, state) {
+              logger.d(state.username);
+            return ListView(
               children: [
                 Container(
                   height: SIZE.height * 0.03,
                 ),
                 //TODO 이름 string 주입
                 Text(
-                  "이학림",
+                  state.username,
                   textAlign: TextAlign.center,
                   style: Theme.of(context).textTheme!.titleLarge,
                 ),
@@ -54,8 +62,10 @@ class SettingScreen extends StatelessWidget {
                 columnSmallPadding(),
                 SettingCollectPanel()
               ],
-            )),
-      ),
+            );
+          }
+        ),
+      )),
       appBar: AppBar(
         leading: SizedBox(
           child: IconButton(
